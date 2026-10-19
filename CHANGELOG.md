@@ -1,5 +1,46 @@
 # Historial de cambios - Actividad5JCP
 
+## [1.0.2] - Validación integral del notebook
+
+### Validación completada
+
+- Ejecución consecutiva de las 64 celdas del notebook.
+- Ejecución satisfactoria de las 52 celdas de código.
+- Cero celdas sin ejecutar.
+- Cero errores registrados.
+- Tiempo total de ejecución: 630.79 segundos.
+- Código de salida del ejecutor: 0.
+- Conservación de gráficas en las celdas 58 y 59.
+
+### Entorno de validación
+
+- Clonación independiente desde GitHub.
+- Versión del proyecto: 1.0.1.
+- Commit verificado: `26bbcce`.
+- Ejecución mediante nbclient con kernel Python 3.
+- Entorno independiente de los experimentos originales.
+
+### Evidencias
+
+- Notebook ejecutado: `entrena_ejecucion_integral.ipynb`.
+- Reporte: `reporte_ejecucion_integral.json`.
+- Respaldos almacenados en Google Drive.
+- Integridad de ambos archivos verificada mediante SHA-256.
+
+### Documentación
+
+- Actualización de la sección 11 del README.
+- Registro de la ejecución integral satisfactoria.
+- Conservación del historial de versiones anteriores.
+
+### Alcance
+
+La reproducibilidad fue validada en el entorno independiente
+utilizado. No se garantiza automáticamente el mismo
+comportamiento en cualquier otro entorno.
+
+---
+
 ## [1.0.1] - Mejoras de portabilidad y reproducibilidad
 
 ### Corregido

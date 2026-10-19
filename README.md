@@ -260,14 +260,34 @@ raíz y desde la carpeta `fuentes/`.
 Para utilizar esta configuración, el notebook debe ejecutarse
 desde uno de esos directorios.
 
-### Limitación pendiente
+### Validación de ejecución integral
 
-Las etapas principales del proyecto fueron verificadas
-por separado en el entorno independiente.
+Además de las pruebas independientes por etapas, se ejecutó
+el notebook completo desde un kernel Jupyter independiente,
+utilizando una clonación del repositorio correspondiente
+al commit `26bbcce` (versión 1.0.1).
 
-La ejecución consecutiva completa de las 64 celdas del
-notebook desde una única sesión limpia continúa pendiente
-de verificación.
+Resultados de la ejecución integral:
+
+- Total de celdas: 64.
+- Celdas de código ejecutadas: 52 de 52.
+- Celdas sin ejecutar: 0.
+- Errores registrados: 0.
+- Duración: 630.79 segundos.
+- Código de salida: 0.
+- Gráficas conservadas en las celdas 58 y 59.
+
+La ejecución se realizó mediante nbclient y produjo
+un notebook con las salidas de ejecución y un reporte JSON.
+
+Ambas evidencias fueron respaldadas en Google Drive,
+verificando su integridad mediante SHA-256.
+
+La ejecución integral fue satisfactoria en el entorno
+independiente utilizado. Esto demuestra la reproducibilidad
+bajo las condiciones verificadas, sin garantizar
+automáticamente el mismo comportamiento en cualquier
+otro entorno de ejecución.
 
 El script `train.py` utiliza las configuraciones finales
 seleccionadas durante la optimización.
