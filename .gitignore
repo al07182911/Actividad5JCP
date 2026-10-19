@@ -218,3 +218,36 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# ==========================================
+# ACTIVIDAD 5 - MACHINE LEARNING
+# ==========================================
+
+# Datasets
+datos/datos_ini/*.csv
+datos/datos_limp/*.csv
+
+# MLflow y SQLite
+mlflow.db
+mlflow_respaldo.db
+mlflow.db-*
+*.db-wal
+*.db-shm
+mlruns/
+mlartifacts/
+mlflow_server.log
+
+# Modelos serializados
+modelo_*/
+*.pkl
+*.joblib
+*.skops
+
+# Respaldos y archivos temporales
+*.zip
+*.bak
+*.bak[0-9]*
+*_respaldo/
+__pycache__/
+.ipynb_checkpoints/
