@@ -182,11 +182,95 @@ También se puede consultar el notebook `fuentes/entrena.ipynb` en Google Colab.
 
 ## 11. Reproducibilidad
 
-El script de entrenamiento fue ejecutado satisfactoriamente durante el desarrollo y reprodujo las métricas finales.
+Se realizaron pruebas independientes utilizando una copia del
+repositorio descargada desde GitHub, correspondiente al commit
+`0b11e0a`.
 
-El notebook fue revisado estructuralmente, pero su ejecución secuencial completa desde un entorno limpio continúa pendiente de verificación.
+### Preparación y división de datos
 
-La selección de hiperparámetros se documenta en el notebook. El script `train.py` utiliza las configuraciones finales seleccionadas.
+- Descarga independiente del dataset desde Kaggle.
+- Preparación de 164,679 registros y 22 columnas.
+- Selección de 16 variables predictoras.
+- División en 131,756 registros de entrenamiento y
+  32,923 registros de prueba.
+- Verificación de cero perfiles compartidos entre conjuntos.
+
+### Validación cruzada
+
+Se reprodujo la validación cruzada con cinco particiones
+mediante StratifiedGroupKFold.
+
+| Modelo | F1 CV reproducido |
+|---|---:|
+| Regresión Logística inicial | 0.7978 |
+| Random Forest rápido | 0.8056 |
+
+### Optimización de hiperparámetros
+
+Se reprodujeron las búsquedas originales mediante
+RandomizedSearchCV.
+
+| Modelo | Mejor F1 CV |
+|---|---:|
+| Regresión Logística | 0.7980 |
+| Random Forest | 0.8084 |
+
+Las puntuaciones de las combinaciones evaluadas coincidieron
+con los resultados históricos consultados.
+
+### Evaluación final
+
+Las métricas obtenidas sobre los 32,923 registros de prueba
+coincidieron con los resultados históricos a seis decimales.
+
+| Métrica | Regresión Logística | Random Forest |
+|---|---:|---:|
+| Accuracy | 0.740546 | 0.746591 |
+| Precision | 0.742343 | 0.732839 |
+| Recall | 0.867455 | 0.907203 |
+| F1-score | 0.800037 | 0.810752 |
+| ROC-AUC | 0.781445 | 0.794283 |
+
+### Comparación estadística
+
+Se reprodujo la tabla de contingencia de McNemar,
+obteniendo una coincidencia exacta con la tabla histórica.
+
+- Estadístico: 19.710407.
+- Valor p: 9.010929716394214e-06.
+- Nivel de significancia: 0.05.
+
+### Registro y recuperación de modelos
+
+Los pipelines optimizados se registraron en MLflow utilizando
+serialización skops.
+
+Ambos modelos se recuperaron correctamente y produjeron
+predicciones idénticas a las originales sobre una muestra
+de 100 registros.
+
+### Portabilidad del notebook
+
+Se corrigieron las celdas 3 y 25 para mejorar la detección
+del directorio del proyecto y la exportación de datos.
+
+La detección del repositorio se validó desde su directorio
+raíz y desde la carpeta `fuentes/`.
+
+Para utilizar esta configuración, el notebook debe ejecutarse
+desde uno de esos directorios.
+
+### Limitación pendiente
+
+Las etapas principales del proyecto fueron verificadas
+por separado en el entorno independiente.
+
+La ejecución consecutiva completa de las 64 celdas del
+notebook desde una única sesión limpia continúa pendiente
+de verificación.
+
+El script `train.py` utiliza las configuraciones finales
+seleccionadas durante la optimización.
 
 ## 12. Conclusiones
 

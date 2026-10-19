@@ -1,5 +1,51 @@
 # Historial de cambios - Actividad5JCP
 
+## [1.0.1] - Mejoras de portabilidad y reproducibilidad
+
+### Corregido
+
+- Celda 3: detección del repositorio sin depender de nombres
+  específicos de carpetas.
+- Celda 25: corrección de la variable `base` por `BASE`.
+- Conservación de las 64 celdas del notebook original.
+
+### Validación independiente
+
+- Clonación del repositorio desde GitHub.
+- Descarga y preparación del dataset desde Kaggle.
+- Reproducción de 164,679 registros preparados.
+- División de entrenamiento y prueba sin perfiles compartidos.
+- Construcción de pipelines de ambos modelos.
+- Validación cruzada con StratifiedGroupKFold.
+- Optimización con RandomizedSearchCV.
+- Reproducción de métricas finales a seis decimales.
+- Reproducción exacta de la tabla de McNemar.
+- Registro y recuperación de ambos modelos desde MLflow.
+- Verificación de predicciones idénticas en 100 registros.
+
+### Resultados reproducidos
+
+| Métrica | Regresión Logística | Random Forest |
+|---|---:|---:|
+| Accuracy | 0.740546 | 0.746591 |
+| Precision | 0.742343 | 0.732839 |
+| Recall | 0.867455 | 0.907203 |
+| F1-score | 0.800037 | 0.810752 |
+| ROC-AUC | 0.781445 | 0.794283 |
+
+### Documentación
+
+- Ampliación de la sección de reproducibilidad del README.
+- Registro de las pruebas independientes realizadas.
+- Documentación de las condiciones de ejecución del notebook.
+
+### Pendiente
+
+- Ejecución consecutiva completa de las 64 celdas
+  desde una única sesión limpia.
+
+---
+
 ## [1.0.0] - 2026-10-18
 
 ### Incorporado
